@@ -1,11 +1,12 @@
 // run `node index.js` in the terminal
 const jsdom = require('jsdom');
+const { getWebsite } = require('./util.js');
+
 const { JSDOM } = jsdom;
 
-console.log(`Hello Node.js v${process.versions.node}!`);
-
 const url = 'https://getbootstrap.com/';
+const body = getWebsite(url);
 
-const dom = new JSDOM(`<!DOCTYPE html><p>Hello ma nigga</p>`);
+const dom = new JSDOM(body);
 
 console.log(dom.window.document.querySelector('p').textContent);
