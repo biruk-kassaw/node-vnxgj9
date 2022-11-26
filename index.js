@@ -1,12 +1,14 @@
 // run `node index.js` in the terminal
 const jsdom = require('jsdom');
-const { getWebsite } = require('./util.js');
+const { getme } = require('./util.js');
 
 const { JSDOM } = jsdom;
 
-const url = 'https://getbootstrap.com/';
-const body = getWebsite(url);
+const url = 'https://www.scrapingbee.com/blog/node-fetch/';
+// const body = getWebsite(url);
+var temp = getme;
+console.log(getme('h'));
 
-const dom = new JSDOM(body);
+// const dom = new JSDOM(body);
 
-console.log(dom.window.document.querySelector('p').textContent);
+// console.log(dom.window.document.querySelector('h3').textContent);
